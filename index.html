@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeaveNectar - Lifestyle Blog & Product Reviews</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <div class="logo">
+                            <i class="fas fa-leaf"></i>
+                            <span>WeaveNectar</span>
+                        </div>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">Categories <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="category.html?cat=fashion">Fashion & Accessories</a></li>
+                            <li><a href="category.html?cat=health">Health & Beauty</a></li>
+                            <li><a href="category.html?cat=home">Home & Garden</a></li>
+                            <li><a href="category.html?cat=travel">Travel & Accommodation</a></li>
+                            <li><a href="category.html?cat=finance">Finance & Insurance</a></li>
+                            <li><a href="category.html?cat=food">Food & Beverage</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html" class="nav-link">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="nav-search">
+                    <form class="search-form">
+                        <input type="text" placeholder="Search..." class="search-input">
+                        <button type="submit" class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Discover Your Perfect Lifestyle</h1>
+                <p class="hero-subtitle">Curated recommendations for fashion, beauty, home, travel, finance, and food</p>
+                <div class="hero-buttons">
+                    <a href="#featured-posts" class="btn btn-primary">Explore Articles</a>
+                    <a href="products.html" class="btn btn-secondary">View Products</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-placeholder">
+                    <i class="fas fa-leaf"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Explore Categories</h2>
+            <div class="categories-grid">
+                <div class="category-card" data-category="fashion" data-article="article-sustainable-fashion.html">
+                    <div class="category-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Fashion & Accessories</h3>
+                    <p>Latest trends and style guides</p>
+                </div>
+                <div class="category-card" data-category="health" data-article="article-skincare-tips.html">
+                    <div class="category-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Health & Beauty</h3>
+                    <p>Wellness and beauty tips</p>
+                </div>
+                <div class="category-card" data-category="home" data-article="article-minimalist-home.html">
+                    <div class="category-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Home & Garden</h3>
+                    <p>Interior design and gardening</p>
+                </div>
+                <div class="category-card" data-category="travel" data-article="article-southeast-asia-travel.html">
+                    <div class="category-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3>Travel & Accommodation</h3>
+                    <p>Travel guides and destinations</p>
+                </div>
+                <div class="category-card" data-category="finance" data-article="article-investment-strategies.html">
+                    <div class="category-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Finance & Insurance</h3>
+                    <p>Financial advice and tips</p>
+                </div>
+                <div class="category-card" data-category="food" data-article="article-plant-based-recipes.html">
+                    <div class="category-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Food & Beverage</h3>
+                    <p>Recipes and dining experiences</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Posts Section -->
+    <section id="featured-posts" class="featured-posts">
+        <div class="container">
+            <h2 class="section-title">Featured Articles</h2>
+            <div class="posts-grid">
+                <article class="post-card featured" data-href="article-sustainable-fashion.html">
+                    <div class="post-image">
+                        <img data-src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&h=600&fit=crop&crop=center"
+                             alt="Sustainable Fashion"
+                             class="lazy"
+                             style="width: 100%; height: 100%; object-fit: cover; background: linear-gradient(135deg, #4a7c59, #2d5a27); display: flex; align-items: center; justify-content: center;">
+                        <div class="post-category">Fashion</div>
+                    </div>
+                    <div class="post-content">
+                        <h3 class="post-title"><a href="article-sustainable-fashion.html">Sustainable Fashion: The Future of Style</a></h3>
+                        <p class="post-excerpt">Discover how eco-friendly fashion is revolutionizing the industry and learn about brands leading the change.</p>
+                        <div class="post-meta">
+                            <span class="post-date">January 15, 2025</span>
+                            <a href="article-sustainable-fashion.html" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post-card" data-href="article-skincare-tips.html">
+                    <div class="post-image">
+                        <img data-src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=300&fit=crop&crop=center"
+                             alt="Skincare Tips"
+                             class="lazy"
+                             style="width: 100%; height: 100%; object-fit: cover; background: linear-gradient(135deg, #4a7c59, #2d5a27); display: flex; align-items: center; justify-content: center;">
+                        <div class="post-category">Health</div>
+                    </div>
+                    <div class="post-content">
+                        <h3 class="post-title"><a href="article-skincare-tips.html">10 Essential Skincare Tips for Winter</a></h3>
+                        <p class="post-excerpt">Keep your skin healthy and glowing during the cold months with these expert-recommended tips.</p>
+                        <div class="post-meta">
+                            <span class="post-date">February 8, 2025</span>
+                            <a href="article-skincare-tips.html" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post-card" data-href="article-minimalist-home.html">
+                    <div class="post-image">
+                        <img data-src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop&crop=center"
+                             alt="Minimalist Home"
+                             class="lazy"
+                             style="width: 100%; height: 100%; object-fit: cover; background: linear-gradient(135deg, #4a7c59, #2d5a27); display: flex; align-items: center; justify-content: center;">
+                        <div class="post-category">Home</div>
+                    </div>
+                    <div class="post-content">
+                        <h3 class="post-title"><a href="article-minimalist-home.html">Minimalist Home Decor Ideas</a></h3>
+                        <p class="post-excerpt">Transform your living space with these simple yet elegant minimalist design principles.</p>
+                        <div class="post-meta">
+                            <span class="post-date">March 12, 2025</span>
+                            <a href="article-minimalist-home.html" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post-card" data-href="article-southeast-asia-travel.html">
+                    <div class="post-image">
+                        <img data-src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop&crop=center"
+                             alt="Southeast Asia Travel"
+                             class="lazy"
+                             style="width: 100%; height: 100%; object-fit: cover; background: linear-gradient(135deg, #4a7c59, #2d5a27); display: flex; align-items: center; justify-content: center;">
+                        <div class="post-category">Travel</div>
+                    </div>
+                    <div class="post-content">
+                        <h3 class="post-title"><a href="article-southeast-asia-travel.html">Hidden Gems of Southeast Asia</a></h3>
+                        <p class="post-excerpt">Explore off-the-beaten-path destinations that offer authentic cultural experiences.</p>
+                        <div class="post-meta">
+                            <span class="post-date">April 20, 2025</span>
+                            <a href="article-southeast-asia-travel.html" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post-card" data-href="article-investment-strategies.html">
+                    <div class="post-image">
+                        <img data-src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=400&h=300&fit=crop&crop=center"
+                             alt="Investment Strategies"
+                             class="lazy"
+                             style="width: 100%; height: 100%; object-fit: cover; background: linear-gradient(135deg, #4a7c59, #2d5a27); display: flex; align-items: center; justify-content: center;">
+                        <div class="post-category">Finance</div>
+                    </div>
+                    <div class="post-content">
+                        <h3 class="post-title"><a href="article-investment-strategies.html">Smart Investment Strategies for 2025</a></h3>
+                        <p class="post-excerpt">Learn about emerging investment opportunities and how to build a diversified portfolio.</p>
+                        <div class="post-meta">
+                            <span class="post-date">May 5, 2025</span>
+                            <a href="article-investment-strategies.html" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post-card" data-href="article-plant-based-recipes.html">
+                    <div class="post-image">
+                        <img data-src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop&crop=center"
+                             alt="Plant-Based Recipes"
+                             class="lazy"
+                             style="width: 100%; height: 100%; object-fit: cover; background: linear-gradient(135deg, #4a7c59, #2d5a27); display: flex; align-items: center; justify-content: center;">
+                        <div class="post-category">Food</div>
+                    </div>
+                    <div class="post-content">
+                        <h3 class="post-title"><a href="article-plant-based-recipes.html">Plant-Based Recipes for Every Season</a></h3>
+                        <p class="post-excerpt">Delicious and nutritious plant-based meals that celebrate seasonal ingredients.</p>
+                        <div class="post-meta">
+                            <span class="post-date">June 18, 2025</span>
+                            <a href="article-plant-based-recipes.html" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter for the latest articles and product recommendations</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" class="newsletter-input">
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-leaf"></i>
+                        <span>WeaveNectar</span>
+                    </div>
+                    <p>Your trusted source for lifestyle recommendations and product reviews.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="category.html?cat=fashion">Fashion & Accessories</a></li>
+                        <li><a href="category.html?cat=health">Health & Beauty</a></li>
+                        <li><a href="category.html?cat=home">Home & Garden</a></li>
+                        <li><a href="category.html?cat=travel">Travel & Accommodation</a></li>
+                        <li><a href="category.html?cat=finance">Finance & Insurance</a></li>
+                        <li><a href="category.html?cat=food">Food & Beverage</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> hello@weavenectar.com</p>
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-map-marker-alt"></i> New York, NY</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WeaveNectar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

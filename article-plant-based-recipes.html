@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant-Based Recipes for Every Season - WeaveNectar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <div class="logo">
+                            <i class="fas fa-leaf"></i>
+                            <span>WeaveNectar</span>
+                        </div>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">Categories <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="category.html?cat=fashion">Fashion & Accessories</a></li>
+                            <li><a href="category.html?cat=health">Health & Beauty</a></li>
+                            <li><a href="category.html?cat=home">Home & Garden</a></li>
+                            <li><a href="category.html?cat=travel">Travel & Accommodation</a></li>
+                            <li><a href="category.html?cat=finance">Finance & Insurance</a></li>
+                            <li><a href="category.html?cat=food">Food & Beverage</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html" class="nav-link">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="nav-search">
+                    <form class="search-form">
+                        <input type="text" placeholder="Search..." class="search-input">
+                        <button type="submit" class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Article Content -->
+    <main class="article-main">
+        <div class="container">
+            <div class="article-content">
+                <!-- Breadcrumb -->
+                <nav class="article-breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <a href="category.html?cat=food">Food & Beverage</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Plant-Based Recipes for Every Season</span>
+                </nav>
+
+                <!-- Article Header -->
+                <header class="article-header">
+                    <div class="article-meta">
+                        <span class="article-category">Food & Beverage</span>
+                        <span class="article-date">June 18, 2025</span>
+                        <span class="article-read-time">6 min read</span>
+                    </div>
+                    <h1 class="article-title">Plant-Based Recipes for Every Season</h1>
+                    <div class="article-author">
+                        <div class="author-info">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-details">
+                                <span class="author-name">Chef Maria Santos</span>
+                                <span class="author-title">Plant-Based Chef</span>
+                            </div>
+                        </div>
+                        <div class="article-actions">
+                            <button class="action-btn" onclick="shareArticle()" title="Share">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                            <button class="action-btn" onclick="bookmarkArticle()" title="Bookmark">
+                                <i class="far fa-bookmark"></i>
+                            </button>
+                            <button class="action-btn" onclick="printArticle()" title="Print">
+                                <i class="fas fa-print"></i>
+                            </button>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Featured Image -->
+                <div class="article-featured-image">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&h=600&fit=crop" alt="Plant-Based Recipes" loading="lazy">
+                </div>
+
+                <!-- Article Body -->
+                <div class="article-body">
+                    <p>Delicious and nutritious plant-based meals that celebrate seasonal ingredients and bring joy to your table year-round. Whether you're a seasoned vegan or just looking to incorporate more plant-based meals into your diet, these recipes will inspire and delight.</p>
+                    
+                    <h2>The Benefits of Seasonal Plant-Based Eating</h2>
+                    <p>Eating seasonally means enjoying fruits and vegetables at their peak flavor and nutritional value. Seasonal produce is often more affordable, environmentally friendly, and supports local farmers. Plus, it naturally varies your diet throughout the year.</p>
+                    
+                    <h2>Spring Recipes</h2>
+                    <p>Spring brings fresh greens, asparagus, peas, and early berries. These ingredients are perfect for light, refreshing meals that celebrate renewal and growth.</p>
+                    
+                    <h3>Spring Green Smoothie Bowl</h3>
+                    <p><strong>Ingredients:</strong></p>
+                    <ul>
+                        <li>2 cups fresh spinach</li>
+                        <li>1 frozen banana</li>
+                        <li>1/2 avocado</li>
+                        <li>1 cup almond milk</li>
+                        <li>1 tablespoon chia seeds</li>
+                        <li>Fresh berries for topping</li>
+                    </ul>
+                    <p><strong>Instructions:</strong> Blend all ingredients until smooth. Pour into a bowl and top with fresh berries, granola, and a drizzle of honey.</p>
+                    
+                    <h3>Roasted Asparagus and Pea Risotto</h3>
+                    <p><strong>Ingredients:</strong></p>
+                    <ul>
+                        <li>1 cup arborio rice</li>
+                        <li>1 bunch asparagus, trimmed</li>
+                        <li>1 cup fresh peas</li>
+                        <li>4 cups vegetable broth</li>
+                        <li>1/2 cup nutritional yeast</li>
+                        <li>2 tablespoons olive oil</li>
+                    </ul>
+                    <p><strong>Instructions:</strong> Roast asparagus until tender. Sauté rice in oil, add broth gradually while stirring. Fold in peas, asparagus, and nutritional yeast. Season to taste.</p>
+                    
+                    <h2>Summer Recipes</h2>
+                    <p>Summer offers an abundance of fresh tomatoes, zucchini, corn, and stone fruits. These ingredients shine in simple, no-cook or lightly cooked dishes.</p>
+                    
+                    <h3>Mediterranean Quinoa Bowl</h3>
+                    <p><strong>Ingredients:</strong></p>
+                    <ul>
+                        <li>1 cup cooked quinoa</li>
+                        <li>Cherry tomatoes, halved</li>
+                        <li>Cucumber, diced</li>
+                        <li>Kalamata olives</li>
+                        <li>Red onion, thinly sliced</li>
+                        <li>Fresh herbs (basil, parsley)</li>
+                        <li>Lemon-tahini dressing</li>
+                    </ul>
+                    <p><strong>Instructions:</strong> Combine all ingredients in a large bowl. Drizzle with lemon-tahini dressing and toss gently. Serve chilled.</p>
+                    
+                    <h3>Grilled Portobello Mushroom Burgers</h3>
+                    <p><strong>Ingredients:</strong></p>
+                    <ul>
+                        <li>4 large portobello mushrooms</li>
+                        <li>Balsamic vinegar</li>
+                        <li>Garlic powder</li>
+                        <li>Burger buns</li>
+                        <li>Avocado slices</li>
+                        <li>Lettuce and tomato</li>
+                    </ul>
+                    <p><strong>Instructions:</strong> Marinate mushrooms in balsamic vinegar and garlic powder. Grill for 5-7 minutes per side. Serve on buns with avocado, lettuce, and tomato.</p>
+                    
+                    <h2>Fall Recipes</h2>
+                    <p>Fall brings hearty squashes, root vegetables, apples, and warming spices. These ingredients create comforting, nourishing meals perfect for cooler weather.</p>
+                    
+                    <h3>Butternut Squash and Apple Soup</h3>
+                    <p><strong>Ingredients:</strong></p>
+                    <ul>
+                        <li>1 large butternut squash, cubed</li>
+                        <li>2 apples, peeled and chopped</li>
+                        <li>1 onion, diced</li>
+                        <li>4 cups vegetable broth</li>
+                        <li>1 teaspoon cinnamon</li>
+                        <li>1/2 teaspoon nutmeg</li>
+                        <li>Coconut milk for garnish</li>
+                    </ul>
+                    <p><strong>Instructions:</strong> Sauté onion until soft. Add squash, apples, and broth. Simmer until tender. Blend until smooth. Season with spices and serve with coconut milk.</p>
+                    
+                    <h3>Roasted Root Vegetable Medley</h3>
+                    <p><strong>Ingredients:</strong></p>
+                    <ul>
+                        <li>Sweet potatoes, cubed</li>
+                        <li>Carrots, sliced</li>
+                        <li>Beets, quartered</li>
+                        <li>Brussels sprouts, halved</li>
+                        <li>Olive oil</li>
+                        <li>Fresh rosemary and thyme</li>
+                    </ul>
+                    <p><strong>Instructions:</strong> Toss vegetables with oil and herbs. Roast at 400°F for 30-40 minutes until tender and caramelized. Season with salt and pepper.</p>
+                    
+                    <h2>Winter Recipes</h2>
+                    <p>Winter calls for hearty, warming dishes using stored vegetables, grains, and legumes. These recipes provide comfort and nutrition during the coldest months.</p>
+                    
+                    <h3>Lentil and Vegetable Stew</h3>
+                    <p><strong>Ingredients:</strong></p>
+                    <ul>
+                        <li>1 cup dried lentils</li>
+                        <li>Mixed winter vegetables (carrots, celery, potatoes)</li>
+                        <li>1 can diced tomatoes</li>
+                        <li>4 cups vegetable broth</li>
+                        <li>Bay leaves and thyme</li>
+                        <li>Fresh parsley for garnish</li>
+                    </ul>
+                    <p><strong>Instructions:</strong> Sauté vegetables until softened. Add lentils, tomatoes, broth, and herbs. Simmer for 30-40 minutes until lentils are tender. Garnish with parsley.</p>
+                    
+                    <h3>Warm Quinoa Breakfast Bowl</h3>
+                    <p><strong>Ingredients:</strong></p>
+                    <ul>
+                        <li>1 cup cooked quinoa</li>
+                        <li>Almond milk</li>
+                        <li>Dried fruits (dates, cranberries)</li>
+                        <li>Nuts and seeds</li>
+                        <li>Cinnamon and vanilla</li>
+                        <li>Maple syrup</li>
+                    </ul>
+                    <p><strong>Instructions:</strong> Warm quinoa with almond milk. Add dried fruits, nuts, and spices. Sweeten with maple syrup and serve hot.</p>
+                    
+                    <h2>Essential Plant-Based Pantry Staples</h2>
+                    <p>Stock your pantry with these versatile ingredients to make plant-based cooking easier and more flavorful:</p>
+                    
+                    <ul>
+                        <li><strong>Grains:</strong> Quinoa, brown rice, oats, barley</li>
+                        <li><strong>Legumes:</strong> Lentils, chickpeas, black beans, split peas</li>
+                        <li><strong>Nuts and Seeds:</strong> Almonds, walnuts, chia seeds, hemp hearts</li>
+                        <li><strong>Condiments:</strong> Nutritional yeast, tahini, miso paste, apple cider vinegar</li>
+                        <li><strong>Spices:</strong> Turmeric, cumin, paprika, garlic powder, onion powder</li>
+                    </ul>
+                    
+                    <h2>Meal Planning Tips</h2>
+                    <p>Successful plant-based eating requires some planning. Here are tips to make it easier:</p>
+                    
+                    <ul>
+                        <li>Plan meals around seasonal produce</li>
+                        <li>Prep ingredients in advance</li>
+                        <li>Cook grains and legumes in batches</li>
+                        <li>Keep frozen fruits and vegetables on hand</li>
+                        <li>Experiment with new ingredients regularly</li>
+                    </ul>
+                    
+                    <h2>Nutritional Considerations</h2>
+                    <p>While plant-based diets can be very healthy, pay attention to these nutrients:</p>
+                    
+                    <ul>
+                        <li><strong>Protein:</strong> Include beans, lentils, tofu, tempeh, and quinoa</li>
+                        <li><strong>Vitamin B12:</strong> Consider fortified foods or supplements</li>
+                        <li><strong>Iron:</strong> Pair iron-rich foods with vitamin C for better absorption</li>
+                        <li><strong>Omega-3s:</strong> Include flaxseeds, chia seeds, and walnuts</li>
+                        <li><strong>Calcium:</strong> Eat leafy greens, fortified plant milks, and tahini</li>
+                    </ul>
+                    
+                    <h2>Making the Transition</h2>
+                    <p>If you're new to plant-based eating, start gradually:</p>
+                    
+                    <ol>
+                        <li>Begin with one plant-based meal per day</li>
+                        <li>Experiment with meat alternatives</li>
+                        <li>Focus on adding vegetables rather than removing meat</li>
+                        <li>Find plant-based versions of your favorite dishes</li>
+                        <li>Connect with others who share your dietary choices</li>
+                    </ol>
+                    
+                    <p>Remember, plant-based eating is about abundance, not restriction. Embrace the variety of flavors, textures, and nutrients that plants offer, and enjoy the journey of discovering new favorite foods.</p>
+                </div>
+
+                <!-- Article Tags -->
+                <div class="article-tags">
+                    <h3>Tags:</h3>
+                    <div class="tags-list">
+                        <span class="tag">plant-based</span>
+                        <span class="tag">seasonal recipes</span>
+                        <span class="tag">healthy eating</span>
+                        <span class="tag">vegan cooking</span>
+                    </div>
+                </div>
+
+                <!-- Social Share -->
+                <div class="social-share">
+                    <h3>Share this article:</h3>
+                    <div class="share-buttons">
+                        <a href="#" class="share-btn facebook" onclick="shareOnFacebook()">
+                            <i class="fab fa-facebook"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="#" class="share-btn twitter" onclick="shareOnTwitter()">
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter</span>
+                        </a>
+                        <a href="#" class="share-btn linkedin" onclick="shareOnLinkedIn()">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="#" class="share-btn pinterest" onclick="shareOnPinterest()">
+                            <i class="fab fa-pinterest"></i>
+                            <span>Pinterest</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Author Bio -->
+                <div class="author-bio">
+                    <div class="author-avatar-large">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="author-bio-content">
+                        <h3>Chef Maria Santos</h3>
+                        <p>Maria is a plant-based chef and cookbook author with over 10 years of experience creating delicious, nutritious meals. She specializes in seasonal cooking and helping people transition to plant-based diets.</p>
+                        <div class="author-social">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="article-sidebar">
+                <!-- Table of Contents -->
+                <div class="sidebar-widget">
+                    <h3>Table of Contents</h3>
+                    <nav class="toc">
+                        <ul>
+                            <li><a href="#benefits" class="toc-h2">Benefits of Seasonal Eating</a></li>
+                            <li><a href="#spring-recipes" class="toc-h2">Spring Recipes</a></li>
+                            <li><a href="#summer-recipes" class="toc-h2">Summer Recipes</a></li>
+                            <li><a href="#fall-recipes" class="toc-h2">Fall Recipes</a></li>
+                            <li><a href="#winter-recipes" class="toc-h2">Winter Recipes</a></li>
+                            <li><a href="#pantry-staples" class="toc-h2">Pantry Staples</a></li>
+                            <li><a href="#meal-planning" class="toc-h2">Meal Planning Tips</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Related Articles -->
+                <div class="sidebar-widget">
+                    <h3>Related Articles</h3>
+                    <div class="related-articles">
+                        <div class="related-article">
+                            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=300&h=200&fit=crop" alt="Coffee Culture">
+                            <div class="related-content">
+                                <h4>Artisanal Coffee Culture Guide</h4>
+                                <p class="related-meta">Food • Mar 15, 2025</p>
+                            </div>
+                        </div>
+                        <div class="related-article">
+                            <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=300&h=200&fit=crop" alt="Sustainable Dining">
+                            <div class="related-content">
+                                <h4>Sustainable Dining Practices</h4>
+                                <p class="related-meta">Food • Apr 20, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter Signup -->
+                <div class="sidebar-widget newsletter-widget">
+                    <h3>Stay Updated</h3>
+                    <p>Get the latest recipes delivered to your inbox</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" class="newsletter-input">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Enjoyed this article?</h2>
+                <p>Subscribe to our newsletter for more great content like this</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" class="newsletter-input">
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-leaf"></i>
+                        <span>WeaveNectar</span>
+                    </div>
+                    <p>Your trusted source for lifestyle recommendations and product reviews.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="category.html?cat=fashion">Fashion & Accessories</a></li>
+                        <li><a href="category.html?cat=health">Health & Beauty</a></li>
+                        <li><a href="category.html?cat=home">Home & Garden</a></li>
+                        <li><a href="category.html?cat=travel">Travel & Accommodation</a></li>
+                        <li><a href="category.html?cat=finance">Finance & Insurance</a></li>
+                        <li><a href="category.html?cat=food">Food & Beverage</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> hello@weavenectar.com</p>
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-map-marker-alt"></i> New York, NY</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WeaveNectar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="article.js"></script>
+</body>
+</html>
+
