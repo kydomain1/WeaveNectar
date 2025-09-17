@@ -246,104 +246,177 @@ document.addEventListener('DOMContentLoaded', () => {
             // Don't redirect automatically, just show error or use default content
         }
     }
+
+    // Add error handling for all images
+    const images = document.querySelectorAll('.article-image img, .article-featured-image img');
+
+    images.forEach(img => {
+        img.addEventListener('error', function() {
+            console.log('Image failed to load:', this.src);
+            // Use a placeholder image from a reliable source
+            this.src = `https://via.placeholder.com/800x400/f5f5f5/999?text=Image+Loading...`;
+            this.style.backgroundColor = '#f5f5f5';
+        });
+
+        img.addEventListener('load', function() {
+            console.log('Image loaded successfully:', this.src);
+        });
+    });
 });
 
 // Load article content
 function loadArticle(article) {
-    // Update page title
-    document.title = `${article.title} - WeaveNectar`;
-    
-    // Update breadcrumb
-    document.getElementById('category-link').textContent = article.category;
-    document.getElementById('category-link').href = article.categoryLink;
-    document.getElementById('article-title-breadcrumb').textContent = article.title;
-    
-    // Update article header
-    document.getElementById('article-category').textContent = article.category;
-    document.getElementById('article-date').textContent = article.date;
-    document.getElementById('article-read-time').textContent = article.readTime;
-    document.getElementById('article-title').textContent = article.title;
-    document.getElementById('author-name').textContent = article.author;
-    document.getElementById('author-bio-name').textContent = article.author;
-    document.getElementById('author-bio-text').textContent = article.authorBio;
-    
-    // Update featured image
-    document.getElementById('article-image').src = article.image;
-    document.getElementById('article-image').alt = article.title;
-    
-    // Update article body
-    document.getElementById('article-body').innerHTML = article.content;
-    
-    // Update tags
-    const tagsContainer = document.getElementById('article-tags');
-    tagsContainer.innerHTML = article.tags.map(tag => 
-        `<span class="tag">${tag}</span>`
-    ).join('');
-    
-    // Generate table of contents
-    generateTableOfContents();
-    
-    // Load related articles
-    loadRelatedArticles(article.category);
+    try {
+        // Update page title
+        document.title = `${article.title} - WeaveNectar`;
+
+        // Update breadcrumb (only if elements exist)
+        const categoryLink = document.getElementById('category-link');
+        if (categoryLink) {
+            categoryLink.textContent = article.category;
+            categoryLink.href = article.categoryLink;
+        }
+
+        const titleBreadcrumb = document.getElementById('article-title-breadcrumb');
+        if (titleBreadcrumb) {
+            titleBreadcrumb.textContent = article.title;
+        }
+
+        // Update article header (only if elements exist)
+        const articleCategory = document.getElementById('article-category');
+        if (articleCategory) articleCategory.textContent = article.category;
+
+        const articleDate = document.getElementById('article-date');
+        if (articleDate) articleDate.textContent = article.date;
+
+        const articleReadTime = document.getElementById('article-read-time');
+        if (articleReadTime) articleReadTime.textContent = article.readTime;
+
+        const articleTitle = document.getElementById('article-title');
+        if (articleTitle) articleTitle.textContent = article.title;
+
+        const authorName = document.getElementById('author-name');
+        if (authorName) authorName.textContent = article.author;
+
+        const authorBioName = document.getElementById('author-bio-name');
+        if (authorBioName) authorBioName.textContent = article.author;
+
+        const authorBioText = document.getElementById('author-bio-text');
+        if (authorBioText) authorBioText.textContent = article.authorBio;
+
+        // Update featured image (only if element exists)
+        const articleImage = document.getElementById('article-image');
+        if (articleImage) {
+            articleImage.src = article.image;
+            articleImage.alt = article.title;
+        }
+
+        // Update article body (only if element exists)
+        const articleBody = document.getElementById('article-body');
+        if (articleBody) {
+            articleBody.innerHTML = article.content;
+        }
+
+        // Update tags (only if element exists)
+        const tagsContainer = document.getElementById('article-tags');
+        if (tagsContainer) {
+            tagsContainer.innerHTML = article.tags.map(tag =>
+                `<span class="tag">${tag}</span>`
+            ).join('');
+        }
+
+        // Generate table of contents
+        generateTableOfContents();
+
+        // Load related articles
+        loadRelatedArticles(article.category);
+
+    } catch (error) {
+        console.log('Error loading article:', error);
+    }
+
+    // Setup image error handling after content is loaded
+    setTimeout(() => {
+        setupImageErrorHandling();
+    }, 100);
 }
 
 // Generate table of contents
 function generateTableOfContents() {
-    const headings = document.querySelectorAll('.article-body h2, .article-body h3');
-    const toc = document.getElementById('table-of-contents');
-    
-    if (headings.length === 0) {
-        toc.innerHTML = '<p>No headings found in this article.</p>';
-        return;
+    try {
+        const headings = document.querySelectorAll('.article-body h2, .article-body h3');
+        const toc = document.getElementById('table-of-contents');
+
+        if (!toc) {
+            console.log('Table of contents element not found');
+            return;
+        }
+
+        if (headings.length === 0) {
+            toc.innerHTML = '<p>No headings found in this article.</p>';
+            return;
+        }
+
+        const tocList = document.createElement('ul');
+        headings.forEach((heading, index) => {
+            const id = `heading-${index}`;
+            heading.id = id;
+
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = `#${id}`;
+            a.textContent = heading.textContent;
+            a.className = heading.tagName === 'H3' ? 'toc-h3' : 'toc-h2';
+
+            li.appendChild(a);
+            tocList.appendChild(li);
+        });
+
+        toc.innerHTML = '';
+        toc.appendChild(tocList);
+    } catch (error) {
+        console.log('Error generating table of contents:', error);
     }
-    
-    const tocList = document.createElement('ul');
-    headings.forEach((heading, index) => {
-        const id = `heading-${index}`;
-        heading.id = id;
-        
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.href = `#${id}`;
-        a.textContent = heading.textContent;
-        a.className = heading.tagName === 'H3' ? 'toc-h3' : 'toc-h2';
-        
-        li.appendChild(a);
-        tocList.appendChild(li);
-    });
-    
-    toc.appendChild(tocList);
 }
 
 // Load related articles
 function loadRelatedArticles(category) {
-    const relatedContainer = document.getElementById('related-articles');
-    
-    // Mock related articles data
-    const relatedArticles = [
-        {
-            title: "Building a Capsule Wardrobe",
-            category: "Fashion",
-            date: "2025-01-20",
-            image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=300&h=200&fit=crop"
-        },
-        {
-            title: "Natural Skincare Ingredients Guide",
-            category: "Health",
-            date: "2025-02-15",
-            image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&h=200&fit=crop"
+    try {
+        const relatedContainer = document.getElementById('related-articles');
+
+        if (!relatedContainer) {
+            console.log('Related articles container not found');
+            return;
         }
-    ];
-    
-    relatedContainer.innerHTML = relatedArticles.map(article => `
-        <div class="related-article">
-            <img src="${article.image}" alt="${article.title}">
-            <div class="related-content">
-                <h4>${article.title}</h4>
-                <p class="related-meta">${article.category} • ${article.date}</p>
+
+        // Mock related articles data
+        const relatedArticles = [
+            {
+                title: "Building a Capsule Wardrobe",
+                category: "Fashion",
+                date: "2025-01-20",
+                image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=300&h=200&fit=crop"
+            },
+            {
+                title: "Natural Skincare Ingredients Guide",
+                category: "Health",
+                date: "2025-02-15",
+                image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&h=200&fit=crop"
+            }
+        ];
+
+        relatedContainer.innerHTML = relatedArticles.map(article => `
+            <div class="related-article">
+                <img src="${article.image}" alt="${article.title}">
+                <div class="related-content">
+                    <h4>${article.title}</h4>
+                    <p class="related-meta">${article.category} • ${article.date}</p>
+                </div>
             </div>
-        </div>
-    `).join('');
+        `).join('');
+    } catch (error) {
+        console.log('Error loading related articles:', error);
+    }
 }
 
 // Share functions
@@ -791,4 +864,60 @@ const articleStyles = `
 const styleSheet = document.createElement('style');
 styleSheet.textContent = articleStyles;
 document.head.appendChild(styleSheet);
+
+// Handle image loading errors after page load
+function setupImageErrorHandling() {
+    const images = document.querySelectorAll('.article-image img, .article-featured-image img');
+
+    images.forEach((img, index) => {
+        // Set a backup image for each position
+        const backupImages = [
+            'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&w=800&h=400&fit=crop', // skincare items
+            'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&w=800&h=400&fit=crop', // natural ingredients
+            'https://images.unsplash.com/photo-1564149285381-5b88c54fa67b?ixlib=rb-4.0.3&w=800&h=400&fit=crop', // hand cream
+            'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&w=800&h=400&fit=crop'  // healthy lifestyle
+        ];
+
+        img.addEventListener('error', function() {
+            console.log('Image failed to load:', this.src);
+
+            // Try backup image first
+            if (backupImages[index] && this.src !== backupImages[index]) {
+                this.src = backupImages[index];
+                return;
+            }
+
+            // Use placeholder as last resort
+            this.src = `https://via.placeholder.com/800x400/f5f5f5/999?text=Skincare+Image`;
+            this.style.backgroundColor = '#f5f5f5';
+        });
+
+        img.addEventListener('load', function() {
+            console.log('Image loaded successfully:', this.src);
+        });
+    });
+}
+
+// Add intersection observer for lazy loading
+if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                    imageObserver.unobserve(img);
+                }
+            }
+        });
+    }, {
+        rootMargin: '50px'
+    });
+
+    // Observe all images with data-src attribute
+    document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+    });
+}
 
