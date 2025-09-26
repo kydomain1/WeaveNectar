@@ -149,6 +149,70 @@ const productsData = [
         features: ['Hyaluronic Acid', 'Natural Extracts', 'All Skin Types', 'Hydrating'],
         inStock: true,
         featured: false
+    },
+    {
+        id: 11,
+        name: 'LATAM Premium Economy Flight',
+        category: 'travel',
+        price: 1299.99,
+        originalPrice: 1599.99,
+        rating: 4.9,
+        reviewCount: 287,
+        image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=400&h=400&fit=crop',
+        brand: 'LATAM Airlines',
+        description: 'Experience premium comfort with LATAM\'s enhanced economy service. Extra legroom, priority boarding, and gourmet dining.',
+        features: ['38" Seat Pitch', 'Priority Boarding', 'Enhanced Meals', 'Extra Baggage'],
+        inStock: true,
+        featured: true,
+        link: 'https://www.linkhaitao.com/index.php?mod=lhdeal&track=14batyrLWyfazmlwKOitYJ_aS_b_bd3YlLpIsmwA_ac3eLAfsebZmAgvy70Gdod1YblP6uPRJkUBJMnFXo3eXu0_c&new=http%3A%2F%2Fwww.latamairlines.com%2Fus%2Fen'
+    },
+    {
+        id: 12,
+        name: 'LATAM Business Class Experience',
+        category: 'travel',
+        price: 3499.99,
+        originalPrice: 4299.99,
+        rating: 5.0,
+        reviewCount: 152,
+        image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&h=400&fit=crop',
+        brand: 'LATAM Airlines',
+        description: 'Ultimate luxury travel with LATAM Business Class. Lie-flat seats, premium dining, and exclusive lounge access.',
+        features: ['Lie-Flat Seats', 'Premium Dining', 'Lounge Access', 'Personal Service'],
+        inStock: true,
+        featured: true,
+        link: 'https://www.linkhaitao.com/index.php?mod=lhdeal&track=14batyrLWyfazmlwKOitYJ_aS_b_bd3YlLpIsmwA_ac3eLAfsebZmAgvy70Gdod1YblP6uPRJkUBJMnFXo3eXu0_c&new=http%3A%2F%2Fwww.latamairlines.com%2Fus%2Fen'
+    },
+    {
+        id: 13,
+        name: 'LATAM Pass Elite Membership',
+        category: 'travel',
+        price: 399.99,
+        originalPrice: 599.99,
+        rating: 4.7,
+        reviewCount: 89,
+        image: 'https://images.unsplash.com/photo-1549294413-26f195200c16?w=400&h=400&fit=crop',
+        brand: 'LATAM Airlines',
+        description: 'Exclusive membership benefits including priority check-in, bonus miles, and complimentary upgrades with LATAM Pass.',
+        features: ['Priority Services', 'Bonus Miles', 'Upgrade Benefits', 'Exclusive Deals'],
+        inStock: true,
+        featured: false,
+        link: 'https://www.linkhaitao.com/index.php?mod=lhdeal&track=14batyrLWyfazmlwKOitYJ_aS_b_bd3YlLpIsmwA_ac3eLAfsebZmAgvy70Gdod1YblP6uPRJkUBJMnFXo3eXu0_c&new=http%3A%2F%2Fwww.latamairlines.com%2Fus%2Fen'
+    },
+    {
+        id: 14,
+        name: 'South America Travel Package',
+        category: 'travel',
+        price: 2799.99,
+        originalPrice: 3499.99,
+        rating: 4.8,
+        reviewCount: 234,
+        image: 'https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=400&h=400&fit=crop',
+        brand: 'LATAM Travel',
+        description: 'Complete South America adventure package with LATAM flights, hotels, and guided tours to multiple destinations.',
+        features: ['Multi-City Flight', 'Hotel Package', 'Guided Tours', 'Travel Insurance'],
+        inStock: true,
+        featured: true,
+        link: 'https://www.linkhaitao.com/index.php?mod=lhdeal&track=14batyrLWyfazmlwKOitYJ_aS_b_bd3YlLpIsmwA_ac3eLAfsebZmAgvy70Gdod1YblP6uPRJkUBJMnFXo3eXu0_c&new=http%3A%2F%2Fwww.latamairlines.com%2Fus%2Fen'
     }
 ];
 
@@ -379,7 +443,12 @@ function quickView(productId) {
 }
 
 function viewProduct(productId) {
-    window.location.href = `product-detail.html?id=${productId}`;
+    const product = productsData.find(p => p.id === productId);
+    if (product && product.link) {
+        window.open(product.link, '_blank', 'noopener,noreferrer');
+    } else {
+        window.location.href = `product-detail.html?id=${productId}`;
+    }
 }
 
 // Quick view modal
